@@ -3,6 +3,7 @@ package com.example.spring.controller;
 import com.example.spring.dto.c10.Car;
 import com.example.spring.dto.c10.Computer;
 import com.example.spring.dto.c10.Person;
+import com.example.spring.dto.c10.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

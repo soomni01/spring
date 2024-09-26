@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war'
     id 'org.springframework.boot' version '3.3.4'
     id 'io.spring.dependency-management' version '1.1.6'
 }
@@ -22,8 +23,18 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+compileJava {
+    options.compilerArgs += ['--enable-preview']
 }

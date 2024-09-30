@@ -2,7 +2,6 @@ package com.example.spring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
 @Controller
@@ -52,7 +51,7 @@ public class Controller02 {
 
     // /main2/sub5?param1=value1&param2=value2&param2=value3
     @RequestMapping("/main2/sub5")
-    public void sub5(WebRequest request){
+    public void sub5(WebRequest request) {
         String param1 = request.getParameter("param1");
         String[] param2s = request.getParameterValues("param2");
 
@@ -63,7 +62,7 @@ public class Controller02 {
 
     // /main2/sub6?hobby=축구&hobby=야구&hobby=농구&name=흥민
     @RequestMapping("/main2/sub6")
-    public void sub6(WebRequest request){
+    public void sub6(WebRequest request) {
         String[] hobbies = request.getParameterValues("hobby");
         String name = request.getParameter("name");
 
@@ -76,7 +75,7 @@ public class Controller02 {
     // 적절한 url을 완성해서 요청 보내기
     // /main2/sub7?address=주소&email=네이버&email=구글
     @RequestMapping("/main2/sub7")
-    public void sub7(WebRequest request){
+    public void sub7(WebRequest request) {
         String address = request.getParameter("address");
         System.out.println("address = " + address);
         String[] emails = request.getParameterValues("email");
@@ -88,7 +87,7 @@ public class Controller02 {
     // request parameter는 모두 String
     // 필요하면 다른 타입으로 변환해서 사용해야함
     @RequestMapping("/main2/sub8")
-    public void sub8(WebRequest request){
+    public void sub8(WebRequest request) {
         String name = request.getParameter("name");
         System.out.println("name = " + name);
 
@@ -96,7 +95,7 @@ public class Controller02 {
         Integer ageInt = Integer.parseInt(age);
         System.out.println("age = " + ageInt);
 
-        String point  = request.getParameter("point");
+        String point = request.getParameter("point");
         Double pointDouble = Double.parseDouble(point);
         System.out.println("point = " + pointDouble);
     }

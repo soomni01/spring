@@ -1,4 +1,4 @@
-package com.example.spring20240924.controller;
+package com.example.spring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,7 +70,7 @@ public class Controller06 {
     }
 
     @RequestMapping("sub6")
-    public String  method6() {
+    public String method6() {
 
         // return이 null이면 요청경로와 같은 view로 결정
         // /WEB-INF/view/main6/sub6.jsp
@@ -89,5 +89,6 @@ public class Controller06 {
 
     // 8번째 메소드와, jsp를 작성해보세요.
     @RequestMapping("sub8")
-    public void method8() {}
+    public void method8() {
+    }
 }

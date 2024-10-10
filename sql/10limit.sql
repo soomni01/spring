@@ -95,7 +95,6 @@ FROM Customers
 ORDER BY CustomerID
 LIMIT 20, 10;
 
-
 # 기존 데이터 복사해서 테이블에 추가하기
 INSERT INTO Customers
     (CustomerName, ContactName, Address, City, PostalCode, Country)

@@ -70,7 +70,7 @@
 
     <%--마지막 페이지로 이동--%>
     <c:if test="${currentPageNumber < lastPageNumber}">
-        <c:url value="/main27/sub5" var="pageLink">
+        <c:url value="/main27/sub6" var="pageLink">
             <c:param name="page" value="${lastPageNumber}"></c:param>
         </c:url>
         <a href="${pageLink}">맨끝 &gt;&gt;</a>

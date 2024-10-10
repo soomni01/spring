@@ -146,7 +146,6 @@ public class Controller27 {
             }
             model.addAttribute("orderList", list);
         }
-
     }
 
     // 페이지 표시

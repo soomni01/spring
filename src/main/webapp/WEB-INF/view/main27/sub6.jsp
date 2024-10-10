@@ -69,11 +69,11 @@
     </c:if>
 
     <%--마지막 페이지로 이동--%>
-    <c:if test="${currentPageNumber > 1}">
+    <c:if test="${currentPageNumber < lastPageNumber}">
         <c:url value="/main27/sub5" var="pageLink">
-            <c:param name="page" value="1"></c:param>
+            <c:param name="page" value="${lastPageNumber}"></c:param>
         </c:url>
-        <a href="${pageLink}">&lt;&lt; 처음</a>
+        <a href="${pageLink}">맨끝 &gt;&gt;</a>
     </c:if>
 </div>
 </body>

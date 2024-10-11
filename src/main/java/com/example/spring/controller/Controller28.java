@@ -1,5 +1,6 @@
 package com.example.spring.controller;
 
+import com.example.spring.dto.C28.Employee;
 import com.example.spring.dto.c26.Customer;
 import com.example.spring.dto.c26.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -191,5 +192,131 @@ public class Controller28 {
         }
         rttr.addAttribute("name", id);
         return "redirect:/main28/sub7";
+    }
+
+    @PostMapping("sub9")
+    public String sub9(Customer customer, RedirectAttributes rttr) {
+        String sql = """
+                UPDATE Customers
+                SET CustomerName = ?,
+                    ContactName = ?,
+                    Address = ?,
+                    City = ?,
+                    Country = ?,
+                    PostalCode = ?
+                WHERE CustomerId = ?
+                """;
+
+        try {
+            Connection con = dataSource.getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            try (con; pstmt) {
+                pstmt.setString(1, customer.getName());
+                pstmt.setString(2, customer.getContact());
+                pstmt.setString(3, customer.getAddress());
+                pstmt.setString(4, customer.getCity());
+                pstmt.setString(5, customer.getCountry());
+                pstmt.setString(6, customer.getPostalCode());
+                pstmt.setString(7, customer.getId());
+                pstmt.executeUpdate();
+                rttr.addFlashAttribute("message", customer.getId() + "번 고객 정보가 수정되었습니다.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        rttr.addAttribute("id", customer.getId());
+        return "redirect:/main28/sub10";
+    }
+
+    @GetMapping("sub10")
+    public void sub10(String id, Model model) {
+        String sql = """
+                SELECT *
+                FROM Customers
+                WHERE CustomerId = ?
+                """;
+
+        try {
+            Connection con = dataSource.getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            try (con; pstmt) {
+                pstmt.setString(1, id);
+                ResultSet rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    Customer customer = new Customer();
+                    customer.setId(rs.getString("CustomerId"));
+                    customer.setName(rs.getString("CustomerName"));
+                    customer.setContact(rs.getString("ContactName"));
+                    customer.setAddress(rs.getString("Address"));
+                    customer.setCity(rs.getString("City"));
+                    customer.setCountry(rs.getString("Country"));
+                    customer.setPostalCode(rs.getString("PostalCode"));
+                    model.addAttribute("customer", customer);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 직원 정보 조회 후 수정하는 2개의 메소드와 jsp, dto 만둘가
+    @PostMapping("sub11")
+    public String sub11(Employee employee, RedirectAttributes rttr) {
+        String sql = """
+                UPDATE Employees
+                SET LastName = ?,
+                    FirstName = ?,
+                    BirthDate = ?,
+                    Photo = ?,
+                    Notes = ?
+                WHERE EmployeeId = ?
+                """;
+        try {
+            Connection con = dataSource.getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            try (con; pstmt) {
+                pstmt.setString(1, employee.getLastName());
+                pstmt.setString(2, employee.getFirstName());
+                pstmt.setString(3, employee.getBirthDate());
+                pstmt.setString(4, employee.getPhoto());
+                pstmt.setString(5, employee.getNotes());
+                pstmt.setString(6, employee.getId());
+                pstmt.executeUpdate();
+                rttr.addFlashAttribute("message", employee.getId() + "번 직원의 정보가 수정되었습니다.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        rttr.addAttribute("id", employee.getId());
+        return "redirect:/main28/sub12";
+    }
+
+    @GetMapping("sub12")
+    public void sub12(String id, Model model) {
+        String sql = """
+                SELECT *
+                FROM Employees
+                WHERE EmployeeId = ?
+                """;
+        try {
+            Connection con = dataSource.getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            try (con; pstmt; rs) {
+                if (rs.next()) {
+                    Employee employee = new Employee();
+                    employee.setLastName(rs.getString("LastName"));
+                    employee.setFirstName(rs.getString("FirstName"));
+                    employee.setBirthDate(rs.getString("BirthDate"));
+                    employee.setPhoto(rs.getString("Photo"));
+                    employee.setNotes(rs.getString("Notes"));
+                    employee.setId(rs.getString("EmployeeId"));
+                    model.addAttribute("employee", employee);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

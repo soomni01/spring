@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 산술연산자
+    // +, -, *, /, %, **
+
+    let a = 10;
+    let b = 3;
+
+    let c = a + b; // 13
+    let d = a - b; // 7
+    let e = a * b; // 30
+    let f = a / b; // 3.333..
+    let g = a % b; // 1
+    let h = a ** b; // a의 b제곱 : 1000
+    console.log(c, d, e, f, g, h);
+
+    // Infinity
+    let i = 10 / 0;
+    console.log(i);
+
+    // -Infinity
+    let k = 10 / 0;
+    console.log(k);
+
+    // NaN (not a number)
+    let j = 10 % 0;
+    console.log(j);
+
+    // 산술연산 시 타입변환이 일어남
+    // : 연산 전 타입을 맞추기
+    let l = 3;
+    let m = "5";
+
+    console.log(l + m); // "35"
+    console.log(l - m); // -2
+    console.log(l * m); // 15
+
+    // Numner() : number로 타입 변환
+    let n = 3;
+    let o = Number(m);
+    console.log(n + o); // 8
+    console.log(n - o); // 2
+    console.log(n * o); // 15
+</script>
+</body>
+</html>

@@ -9,6 +9,21 @@
   for (let a = 0; a < 5; a++) {
     console.log("hello")
   }
+
+  // for in
+  // 객체의 속성 탐색
+  let b = {name: "son", age: 33, address: "seoul"};
+  for (let k in b) {
+    console.log(k, b[k]);
+  }
+
+  // for of
+  // 배열(iterable) 탐색
+  let c = ["hi", "hello", "greeting"];
+  for (let i of c) {
+    console.log(i);
+  }
+
 </script>
 </body>
 </html>

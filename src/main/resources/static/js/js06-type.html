@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // javascript 의 자료형(data type)
+    // undefined, boolean, number, bigInt, string, symbol, object(null)
+
+    // number
+    let a = 3;
+    let b = 3.14;
+    console.log(a, b);
+
+    let d = 10 / 3; // 실수 연산(java 는 3)
+    console.log(d);
+
+    // bigInt
+    let c = 99999999999999999999999999n;
+    console.log(c)
+
+    // string
+    let e = "hello"; // 큰 따옴표
+    let f = "world"; // 작은 따옴표
+    let g = `javascript`; // backtick
+    console.log(e);
+    console.log(f);
+    console.log(g);
+
+    let h = "I'm iron man";
+    let i = 'Hello "world"';
+    let j = "\""; // 큰따옴표 내에 큰따옴표는 역슬래시와 함께
+    let k = '\''; // 작은따옴표 내에 작은따옴표는 역슬래시와 함께
+    let l = `"", ''`; // backtick 내에 큰따옴표, 작은따옴표 사용 가능
+    let m = `
+    여러 줄
+    사용
+    가능
+    `;
+    console.log(m);
+    let age = 30;
+    let name = "son";
+    // 내 이름은 son이고 나이는 30입니다.
+    let n = "내 이름은" + name + "이고 나이는 " + age + "입니다.";
+    console.log(n);
+    let o = `내 이름은 ${name}이고 나이는 ${age}입니다.`;
+    console.log(o)
+</script>
+</body>
+</html>

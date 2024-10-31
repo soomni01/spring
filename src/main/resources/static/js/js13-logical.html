@@ -6,26 +6,26 @@
 </head>
 <body>
 <script>
-    // or (||)
-    // :첫번째 값이 truthy이면 첫번째 값
-    // 아니면 두번째 값
+  // or (||)
+  // :첫번째 값이 truthy이면 첫번째 값
+  // 아니면 두번째 값
 
-    console.log(true || true); // true
-    console.log(true || false); // true
-    console.log(false || true); // true
-    console.log(false || false); // false
+  console.log(true || true); // true
+  console.log(true || false); // true
+  console.log(false || true); // true
+  console.log(false || false); // false
 
-    console.log("hello" || true); // "hello"
-    console.log("hi" || false); // "hi"
-    console.log(9 || false); // 9
+  console.log("hello" || true); // "hello"
+  console.log("hi" || false); // "hi"
+  console.log(9 || false); // 9
 
-    console.log(0 || true); // true
-    console.log("" || true); // true
-    console.log(null || true); // false
+  console.log(0 || true); // true
+  console.log("" || true); // true
+  console.log(null || true); // true
 
-    console.log(0 || "hello"); // "hello"
-    console.log("" || "hi"); // "hello"
-    console.log(false || "world"); // "hello"
+  console.log(0 || "hello"); // "hello"
+  console.log("" || "hi"); // "hi"
+  console.log(false || "world"); // "world"
 </script>
 </body>
 </html>

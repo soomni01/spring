@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 3;
+  console.log(a)
+
+  let b = a;
+  console.log(a, b);
+
+  function fun1() {
+    console.log("hello");
+  }
+
+  let c = fun1;
+  console.log("fun1 호출");
+  fun1();
+  console.log("c 호출");
+  c();
+
+  let fun2 = function () {
+    console.log("이름 없는 함수의 코드들.");
+  }
+  let d = fun2;
+  fun2();
+  d();
+
+  let fun3 = () => console.log("화살표 함수 코드들..");
+  let e = fun3;
+  fun3();
+  e();
+
+  function fun4() {
+    console.log("펀4 코드들...");
+
+    return 33;
+  }
+
+  let f = fun4;
+  let g = fun4();
+
+  console.log(f)
+  console.log(g)
+
+  function fun5() {
+    function fun6() {
+      console.log("fun6의 코드들...");
+    }
+
+    console.log("fun5의 코드들..");
+
+    return fun6;
+  }
+
+  let h = fun5;
+  let i = fun5();
+
+  console.log("-----------------------------------")
+  h(); // 출력결과?
+  i(); // 출력결과?
+
+  console.log("===================================")
+
+  function fun7(a) {
+    console.log("fun7 코드들..");
+    a();
+  }
+
+  function fun8() {
+    console.log("fun8 코드들...")
+  }
+
+  function fun9() {
+    console.log("fun9 코드들..")
+  }
+
+  fun7(fun8);
+  fun7(fun9);
+  fun7(function fun10() {
+    console.log("fun10 코드들");
+  });
+  fun7(function () {
+    console.log("이름 없는 함수 코드들");
+  })
+
+  fun7(() => console.log("애로우 펑션 코드들"));
+</script>
+</body>
+</html>

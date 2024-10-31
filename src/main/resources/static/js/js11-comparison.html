@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 비교연산: >, >=, <, <=, ==, !=, ===, !==
+    let a = 3;
+    let b = 5;
+    console.log(a > b); // false
+    console.log(a >= b); // false
+    console.log(a < b); // true
+    console.log(a <= b); // true
+    console.log(a == b); // false
+    console.log(a != b); // true
+    console.log(a === b); // false
+    console.log(a !== b); // true
+
+    // string 비교
+    let c = "11";
+    let d = "2";
+
+    console.log("aa" > "b"); // false
+    console.log(c > d); // false
+
+    // 다른 타입간 연산 주의 (강제 타입변환)
+    // 연산전 타입 맞추기
+
+    let e = 11;
+    let f = "2";
+    console.log(e > f); // 11 > 2 : true
+
+    console.log(e > Number(f)); // true
+    console.log(`${e}` > f); // false
+
+    // == : 값만 같으면 true
+    // != : 값만 다르면 true
+    // === : 값과 타입이 모두 같아야 true
+    // !== : 값이나 타입이 달라야 true
+    let g = 3;
+    let h = "3";
+    console.log(g == h); // true
+    console.log(g === h); // false
+
+    let i = 5;
+    let j = "5";
+    console.log(i != j); // false
+    console.log(i !== j); // true
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Lorem ipsum dolor.</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, enim, nulla? Blanditiis dignissimos doloribus error
+    fugiat, illo iure maxime molestiae nobis odio omnis perspiciatis praesentium quae repellat sed sint, temporibus.</p>
+<ul>
+    <li>Lorem.</li>
+    <li>Ratione!</li>
+    <li>Deserunt!</li>
+</ul>
+<script>
+  // document : 웹페이지를 표현한 객체
+  // DOM(Document Object Model) : 웹 페이지(문서)를 객체로 표현함
+
+  console.log(document);
+
+  let a = document.getElementsByTagName("h1");
+  console.log(a);
+  console.log(a[0].innerText)
+
+  a[0].innerText = "로렘 입숨 돌로";
+</script>
+</body>
+</html>

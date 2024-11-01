@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = {
+    name: "son",
+    age: 33,
+    info: () => {
+      console.log("hello")
+    }
+  }
+  console.log(a.name);
+  console.log(a.age);
+  a.info();
+
+  // 이미 존재하는 객체 window(브라우저)
+  window.alert();
+  window.confirm();
+  window.prompt();
+  console.log(window.innerWidth);
+  console.log(window.innerHeight);
+
+  // window는 생략 가능
+  alert();
+  confirm();
+  prompt();
+  console.log(innerWidth);
+  console.log(innerHeight);
+</script>
+</body>
+</html>

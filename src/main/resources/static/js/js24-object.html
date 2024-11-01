@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // 객체 : 속성과 기능이 있는 타입
+
+  // 속성(property)
+  let a = 3; // number
+  let b = "hi"; // string
+  let c = {name: "son", age: 33, address: "seoul"};
+
+  console.log(a)
+  console.log(b)
+  console.log(c)
+
+  // 각 속성 탐색
+  console.log(c.name)
+  console.log(c.age)
+  console.log(c.address)
+
+  console.log(c["name"])
+  console.log(c['age'])
+  console.log(c[`address`])
+
+  // 연습: 객체 만들기
+  let d = {
+    email: "gmail",
+    location: "korea",
+    married: true,
+    score: 3.14
+  };
+
+  console.log(d.email); // "gmail"
+  console.log(d.location); // "korea"
+  console.log(d.married); // true
+  console.log(d.score); // 3.14
+
+  // 기능(method, 값이 함수인 속성)
+  let e = {
+    name: "lee",
+    age: 22,
+    // 값이 함수면 속성을 메소드라고 함
+    info: function a() {
+      console.log("this is information");
+    }
+  };
+
+  console.log(e.name)
+  console.log(e.age)
+  console.log(e.info)
+
+  e.info(); // 메소드 실행
+
+  let f = {
+    hello: function () {
+      console.log("say hello");
+    },
+    greeting: () => {
+      console.log("say greeting");
+    },
+    annyeong: () => {
+      console.log("say 안녕");
+    }
+  };
+
+  f.hello();
+  f.greeting();
+  f.annyeong();
+
+  // 연습 : 메소드 있는 객체만들기
+  let g = {
+    height: 100,
+    weight: 150,
+    jump: function () {
+      console.log(" do jump ")
+    },
+    run: () => {
+      console.log(" do run ")
+    },
+    work: () => {
+      console.log(" do work ")
+    }
+  };
+
+  console.log(g.height); // 100
+  console.log(g.weight); // 150
+  g.jump(); // 메소드 호출
+  g.run(); // 메소드 실행
+  g.work(); // 메소드 실행
+</script>
+</body>
+</html>

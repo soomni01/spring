@@ -7,13 +7,18 @@
 <body>
 <button>click me</button>
 
+<button id="btn2">button2</button>
+
+<h1>제목 요소</h1>
+
+<input type="text" id="input1">
 <script>
   // javascript event
 
   let a = document.querySelector("button");
   console.log(a);
 
-  // on이벤트명 속성에 함수를 할당하면 이벤트 발생 시 함수 실행됨
+  // on이벤트명 속성에 함수(이벤트 리스너, 이벤트 핸들러)를 할당하면 이벤트 발생 시 함수 실행됨
   a.onclick = function () {
     console.log("버튼 클릭됨!");
   }
@@ -21,6 +26,32 @@
   a.oncontextmenu = function () {
     console.log("오른쪽 버튼 클릭됨");
   }
+
+  let b = document.querySelector("#btn2");
+  // b.onclick = function() {
+  //   console.log("두번째 버튼 클릭됨")
+  // }
+
+  // addEventListener 사용
+  b.addEventListener("click", function () {
+    console.log("두번째 버튼 클릭됨#######")
+  })
+  b.addEventListener("contextmenu", function () {
+    console.log("두번째 버튼 오른쪽 클릭됨@@@")
+  });
+
+  let c = document.querySelector("h1");
+  c.addEventListener("click", function () {
+    console.log("제목 클릭됨")
+  });
+
+  let d = document.querySelector("#input1");
+  d.addEventListener("keyup", function () {
+    console.log("인풋요소에 입력됨");
+    let a = document.querySelector("#input1");
+    console.log(a.value)
+    document.querySelector("h1").innerText = a.value;
+  })
 </script>
 </body>
 </html>

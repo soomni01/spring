@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="para1">Lorem ipsum dolor.</p>
+<p id="para2">Magni, nobis, vero.</p>
+
+<ul id="list1"></ul>
+
+<!-- script 요소는 body 종료 태그 직전에 작성 -->
+<script>
+  let a = document.querySelector("#para1");
+  let b = document.querySelector("#para2");
+  console.log(a.innerHTML);
+  console.log(b.innerHTML);
+  console.log(a.innerText);
+  console.log(b.innerText);
+
+  // innerHTML : 내부 컨텐츠
+  // innerText : 내부 텍스트
+  a.innerHTML = "hello <b>World</b>";
+  b.innerText = "hello <b>World</b>";
+
+  console.log(a.innerHTML);
+  console.log(a.innerText);
+
+  // <ul id="list1"></ul> 요소 내에 3개의 li이 출력되도록
+  // 코드 작성
+  let c = document.querySelector("#list1");
+  c.innerHTML = `
+                <li>hello</li>
+                <li>world</li>
+                <li>dom</li>
+                `;
+  // li 하나 더 추가
+  let d = document.querySelector("#list1");
+  let content = d.innerHTML;
+  content = content + "<li>hi</li>";
+  d.innerHTML = content;
+
+  // append() : 내부 콘텐츠 추가
+  let e = document.querySelector("#list1");
+  e.append("<li>append</li>");
+
+  // createElement : 새 요소 만들기
+  let f = document.createElement("li")
+  f.innerText = "new append";
+  e.append(f);
+</script>
+</body>
+</html>

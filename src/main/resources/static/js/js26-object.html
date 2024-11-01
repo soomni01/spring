@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 3;
+  let b = a;
+  console.log(a, b); // 3 3
+
+  a = 5;
+  console.log(a, b); // 5 3
+
+  let c = {age: 55};
+  let d = c;
+  console.log(c.age, d.age); // 55 55
+
+  c.age = 66;
+  console.log(c.age, d.age); // 66 66
+
+  function fun1(a) {
+    a.city = "seoul";
+  }
+
+  let e = {city: "paris"};
+  console.log(e.city); // "paris"
+  fun1(e);
+  console.log(e.city); // "seoul
+
+  let f = {
+    name: "son",
+    info: {
+      height: 200,
+      weight: 300
+    }
+  };
+
+  let g = {};
+  g.name = f.name;
+  g.info = f.info;
+
+  console.log(f.name); // son
+  console.log(g.name); // son
+  console.log(f.info.height); // 200
+  console.log(f.info.weight); // 300
+  console.log(g.info.height); // 200
+  console.log(g.info.weight); // 300
+
+  f.name = "lee";
+  console.log(f.name); // lee
+  console.log(g.name); // son
+
+  f.info.height = 2000;
+  console.log(f.info.height); // 2000
+  console.log(g.info.height); // 2000
+
+</script>
+</body>
+</html>

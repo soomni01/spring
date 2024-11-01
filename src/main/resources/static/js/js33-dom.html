@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box1">
+    <ul>
+        <li>Lorem.</li>
+        <li>Rerum!</li>
+        <li>Ratione.</li>
+    </ul>
+</div>
+<div id="box2">
+    <ul>
+        <li>Lorem.</li>
+        <li>Maxime?</li>
+        <li>Inventore.</li>
+    </ul>
+</div>
+
+<script>
+  let a = document.querySelector("#box1");
+  console.log(a);
+  let b = a.parentElement; // body
+  console.log(b);
+  let c = b.parentElement // html
+  console.log(c);
+  let d = c.parentElement; // null
+  console.log(d);
+
+  let e = a.nextElementSibling
+  console.log(e);
+
+  let f = a.children[0]; // ul
+  console.log(f);
+  let g = a.children[1]; // undefined
+  console.log(g);
+
+  let h = a.children[0].children[0];
+  let i = a.children[0].children[1];
+  let j = a.children[0].children[2];
+
+  console.log(j) // li
+  console.log(i) // li
+  console.log(j) // li
+
+  // 첫번째 ul 기준으로 다음 ul 찾기
+  let k = document.querySelector("ul");
+  let l = k.parentElement.parentElement.children[1].children[0];
+  console.log(k);
+  console.log(l);
+  
+</script>
+</body>
+</html>

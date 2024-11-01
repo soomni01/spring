@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = {name: "son", age: 33};
+  console.log(a.name)
+  console.log(a.age)
+
+  console.log(a.city); // undefined
+
+  // 속성값 변경
+  a.name = "lee";
+  console.log(a.name)
+  a.age = 55;
+  console.log(a.age)
+  a.city = "seoul";
+  console.log(a.city)
+  console.log(a)
+
+  a["name"] = "kim";
+  a["age"] = 77;
+  a["address"] = "신촌";
+
+  console.log(a)
+
+  let b = {
+    score: 88,
+    city: "london"
+  };
+
+  // 연습 : 코드작성
+  b.score = 99;
+  b.city = "paris";
+  b.country = "france";
+
+  console.log(b.score); // 99
+  console.log(b.city); // "paris"
+  console.log(b.country); // "france"
+
+  let c = {
+    info: "정보",
+    descript: function () {
+      console.log("정보 출력...");
+    }
+  };
+  console.log(c.info);
+  c.descript();
+
+  c.descript = function () {
+    console.log("다른 정보 출력...");
+  }
+  c.descript();
+</script>
+</body>
+</html>

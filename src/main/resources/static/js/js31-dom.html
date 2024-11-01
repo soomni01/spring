@@ -9,11 +9,11 @@
 <!--p.note.error*2>lorem1-->
 <!--p.error*2>lorem1-->
 <p id="para1" class="note">Lorem.</p>
-<p id="para2" class="note">Velit?</p>
+<p id="para2" class="note">Magni.</p>
 <p class="note error">Lorem.</p>
-<p class="note error">Similique.</p>
+<p class="note error">A.</p>
 <p class="error">Lorem.</p>
-<p class="error">Sint?</p>
+<p class="error">Aperiam.</p>
 
 <script>
   // querySelector 문서에서 선택된 하나의 요소 리턴
@@ -21,11 +21,11 @@
   console.log(a);
   // querySelector 첫번째 요소만 리턴
   let b = document.querySelector(".note");
-  console.log(b);
+  console.log(b)
   let c = document.querySelector(".error");
-  console.log(c);
+  console.log(c)
 
-  // querySelectorAll
+  // querySelectorAll : 선택자로 선택된 모든 요소를 배열로 리턴
   let d = document.querySelectorAll(".note");
   console.log(d);
   console.log(d[0]);
@@ -34,16 +34,26 @@
   console.log(d[3]);
 
   let e = document.querySelectorAll(".error");
-  e[1].innerHTML = "BBBBB";
+  e[1].innerHTML = "BBBBBBBB";
 
   let f = document.querySelectorAll(".error");
   f[3].style.color = "red";
-  e[3].innerHTML = "CCCCC";
+  e[3].innerHTML = "CCCCCC";
 
   document.querySelectorAll(".error")[3].style.background = "yellow";
 
-  document.querySelectorAll(".error")[0].innerHTML = "로렘";
-  document.querySelectorAll(".error")[0].style.color = "yellow";
+  //
+  // let g = document.querySelectorAll("p")[2];
+  // let g = document.querySelectorAll(".note")[2];
+  // let g = document.querySelectorAll(".note.error")[0];
+  // let g = document.querySelector(".note.error");
+  // let g = document.querySelector(".error");
+  let g = document.querySelectorAll(".error")[0];
+
+  g.innerHTML = "로렘";
+  g.style.color = "yellow";
+
 </script>
+
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>click me</button>
+
+<script>
+  // javascript event
+
+  let a = document.querySelector("button");
+  console.log(a);
+
+  // on이벤트명 속성에 함수를 할당하면 이벤트 발생 시 함수 실행됨
+  a.onclick = function () {
+    console.log("버튼 클릭됨!");
+  }
+
+  a.oncontextmenu = function () {
+    console.log("오른쪽 버튼 클릭됨");
+  }
+</script>
+</body>
+</html>

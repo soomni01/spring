@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input1">
+<button id="btn1">
+    +
+</button>
+
+<button id="btn2">
+    -
+</button>
+
+
+<div>
+    <ul id="list1"></ul>
+</div>
+
+<script>
+  let a = document.querySelector("#btn1");
+  a.addEventListener("click", function () {
+    let b = document.querySelector("#input1");
+    let c = document.querySelector("#list1");
+    let d = document.createElement("li");
+    d.innerText = b.value;
+    c.append(d);
+
+    b.value = "";
+    b.focus();
+  });
+
+  document.querySelector("#btn2").addEventListener("click", function () {
+    document.querySelector("#list1>li:last-child").remove();
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>정렬</button>
+<div>
+    <p>Lorem.</p>
+    <p>Expedita!</p>
+    <p>Accusamus.</p>
+    <p>In!</p>
+    <p>Officia.</p>
+</div>
+
+<script>
+  let btn = document.querySelector("button");
+  let ps = document.querySelectorAll("p")
+  let arr = [];
+
+  ps.forEach((item) => {
+    arr.push(item.innerHTML)
+  });
+
+  btn.addEventListener("click", () => {
+    arr.sort();
+
+    ps.forEach((elem) => {
+      let word = arr.shift();
+      elem.innerHTML = word;
+    })
+  })
+</script>
+</body>
+</html>

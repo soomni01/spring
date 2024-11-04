@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input1">
+<ul id="list1"></ul>
+<script>
+  let arr = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, quasi.",
+    "Assumenda beatae ducimus enim est itaque minus nam necessitatibus totam.",
+    "Blanditiis consequatur ducimus harum, ipsum molestiae nisi totam ut veritatis.",
+    "Consequuntur dolore eveniet expedita natus quibusdam recusandae sunt. Dolore, laborum.",
+    "Alias, eaque ex hic minima perspiciatis rem sapiente totam voluptas.",
+    "Asperiores itaque mollitia nesciunt? Facere obcaecati, porro. Exercitationem, id, illo?",
+    "Aperiam autem cupiditate esse exercitationem ipsam placeat, possimus ullam ut?",
+    "Delectus fugiat praesentium quis rerum! Cumque eligendi molestias nostrum! Laudantium!",
+    "Animi asperiores consectetur corporis harum in ipsum laborum quibusdam similique?",
+    "Aliquam commodi dolores doloribus esse ipsam iste nesciunt veritatis voluptate."]
+
+  arr.map(str => {
+    const li = document.createElement("li");
+    li.innerHTML = str;
+    return li;
+  }).forEach(e => {
+    document.querySelector("#list1").append(e)
+  });
+
+  // imperative
+  document.querySelector("#input1").addEventListener("keyup", () => {
+    document.querySelectorAll("#list1 > li").forEach(e => e.remove());
+    const keyword = document.querySelector("#input1").value;
+
+    arr.filter(str => str.toLowerCase().includes(keyword.toLowerCase()))
+      .map(str => {
+        const li = document.createElement("li")
+        li.innerHTML = str;
+        return li;
+      })
+      .forEach(e => document.querySelector("#list1").append(e))
+  })
+</script>
+</body>
+</html>

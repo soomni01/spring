@@ -8,19 +8,19 @@
 <script>
   let a = [3, 1, 4, 2, 5, 9, 2];
 
-  let f1 = a.find((e) => e % 2 === 0);
+  let f1 = a.find(e => e % 2 === 0);
 
   console.log(f1);
 
-  let f2 = a.find((e) => e % 5 === 0);
+  let f2 = a.find(e => e % 5 === 0);
   console.log(f2);
 
   let b = [3, 1, -2, -3, 10, 9, 20, 33, 51, 55];
 
-  let f3 = b.find((e) => e < 0);
-  let f4 = b.find((e) => e >= 10);
-  let f5 = b.find((e) => e > 10);
-  let f6 = b.find((e) => e % 11 === 0)
+  let f3 = b.find(e => e < 0);
+  let f4 = b.find(e => e >= 10);
+  let f5 = b.find(e => e > 10);
+  let f6 = b.find(e => e % 11 === 0)
   console.log(f3); // -2 (첫번째 발견되는 음수)
   console.log(f4); // 10 (첫번째 발견되는 10 이상의 수)
   console.log(f5); // 20 (첫번째 발견되는 10 초과의 수)

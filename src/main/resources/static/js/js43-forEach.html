@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Lorem.</p>
+<p>Natus!</p>
+<p>Quos?</p>
+<p>Itaque.</p>
+<p>Totam!</p>
+
+<input type="text" id="input1">
+
+<script>
+  let paras = document.querySelectorAll("p");
+
+  paras.forEach((elem) => {
+    elem.addEventListener("click", () => {
+      document.querySelector("#input1").value = elem.innerHTML;
+    })
+  })
+</script>
+</body>
+</html>

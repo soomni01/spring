@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [3, 1, 4];
+  let b = a.filter(() => true); // 값 복사
+  console.log(a); // 3, 1, 4
+  console.log(b); // 3, 1, 4
+
+  b[0] = 33;
+
+  console.log(a); // 3, 1, 4
+  console.log(b); // 33, 1, 4
+
+  // 얕은 복사
+  let c = [{name: "son"}, {name: "lee"}, {name: "rose"}];
+  let d = c.filter(() => true); // 참조값이 복사된 것
+
+  console.log(c);
+  console.log(d);
+
+  d[0].name = "han";
+  console.log(c); // c[o].name= "han"
+  console.log(d);
+
+  // 깊은 복사
+  const f = c.map(e => {
+    return {...e}; // spread 연산자
+  });
+  f[0].name = "apt";
+  
+  console.log(c);
+  console.log(f);
+</script>
+</body>
+</html>

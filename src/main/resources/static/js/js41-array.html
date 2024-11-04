@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Lorem.</p>
+<p>Consequuntur.</p>
+<p>Veniam!</p>
+<p>Sunt.</p>
+<p>Quo!</p>
+
+<script>
+  let a = ["f", "a", "k", "e", "r"];
+
+  for (let i = 0; i < a.length; i++) {
+    console.log(a[i]);
+  }
+
+  for (let i = a.length; i >= 0; i--) {
+    console.log(a[i]);
+  }
+
+  // for of
+  for (let i of a) {
+    console.log(i)
+  }
+
+  // 연습
+  let b = [9, 8, 7, 6, 5, 4];
+
+  // b의 각 아이템을 log로 출력 코드 작성
+  for (let i of b) {
+    console.log(i)
+  }
+  // b의 각 값을 모두 더한 값을 log로 출력하는 코드
+  let s = 0;
+  for (let i of b) {
+    s += i;
+  }
+  console.log(s);
+
+  //
+  let paras = document.querySelectorAll("p"); // NodeList
+  console.log(paras.length); // 5
+
+  for (let i = 0; i < paras; i++) {
+    console.log(paras[i].innerHTML)
+  }
+
+  for (let e of paras) {
+    console.log(e.innerHTML)
+  }
+
+  paras.push(`<p>a</p>`)
+
+</script>
+</body>
+</html>

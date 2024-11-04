@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  const a = [1, 3, 5, 7, 9, 11];
+  const b = [3, 1, 4, 1, 5, 9];
+
+  const r1 = a.every(e => e % 2 === 1);
+  const r2 = b.every(e => e % 2 === 1);
+  console.log(r1); // true
+  console.log(r2); // false
+
+  const r3 = b.every(e => e % 2 === 0);
+  console.log(r3); // false
+
+  const r4 = b.some(e => e % 2 === 1);
+  const r5 = b.some(e => e % 2 === 0);
+  console.log(r4, r5);
+
+  const c = ["hankang", "lee", "son", "faker"];
+  // 모두 홀수글자인 아이템들인가?
+  const r6 = c.every(str => str.length % 2 === 1);
+  console.log(r6)
+
+</script>
+</body>
+</html>

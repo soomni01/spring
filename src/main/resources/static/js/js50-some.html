@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  let a = [1, 3, 5, 7, 9, 11];
+  const r1 = a.some(e => e % 2 === 1);
+  console.log(r1); // true
+
+  const r2 = a.some(e => e % 2 === 0);
+  console.log(r2); // false
+
+  // 연습
+  let b = ["son heung min", "faker", "LeeKangIn"];
+
+  // b의 아이템에 공백문자가 있는 것이 있는가?
+  const r3 = b.some(e => e.includes(" "));
+  console.log(r3); // true
+</script>
+</body>
+</html>

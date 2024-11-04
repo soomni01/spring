@@ -5,32 +5,67 @@
     <title>Title</title>
 </head>
 <body>
-<button>정렬</button>
+<!--div>p*5>lorem1-->
+<button>오름차순 정렬</button>
+<button>내림차순 정렬</button>
 <div>
     <p>Lorem.</p>
-    <p>Expedita!</p>
-    <p>Accusamus.</p>
-    <p>In!</p>
-    <p>Officia.</p>
+    <p>Necessitatibus.</p>
+    <p>Iusto!</p>
+    <p>Odio!</p>
+    <p>Aliquam?</p>
 </div>
-
 <script>
-  let btn = document.querySelector("button");
-  let ps = document.querySelectorAll("p")
-  let arr = [];
+  const btn = document.querySelector("button");
+  btn.addEventListener("click", function () {
+    const paras = document.querySelectorAll("p");
+    const parasArray = [];
+    for (const p of paras) {
+      parasArray.push(p);
+    }
 
-  ps.forEach((item) => {
-    arr.push(item.innerHTML)
+    parasArray.sort((e1, e2) => {
+      if (e1.innerHTML > e2.innerHTML) {
+        return 1;
+      } else if (e1.innerHTML < e2.innerHTML) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+
+    const div = document.querySelector("div");
+    parasArray.forEach(e => {
+      e.remove();
+      div.append(e);
+    })
   });
 
-  btn.addEventListener("click", () => {
-    arr.sort();
+  const btn2 = document.querySelector("button:nth-child(2)");
+  btn2.addEventListener("click", function () {
+    const paras = document.querySelectorAll("p");
+    const parasArray = [];
+    for (const p of paras) {
+      parasArray.push(p);
+    }
 
-    ps.forEach((elem) => {
-      let word = arr.shift();
-      elem.innerHTML = word;
+    parasArray.sort((e1, e2) => {
+      if (e1.innerHTML < e2.innerHTML) {
+        return 1;
+      } else if (e1.innerHTML > e2.innerHTML) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+
+    const div = document.querySelector("div");
+    parasArray.forEach(e => {
+      e.remove();
+      div.append(e);
     })
-  })
+  });
 </script>
+
 </body>
 </html>

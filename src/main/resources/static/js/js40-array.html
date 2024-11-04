@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // 배열 (array)
+  let a = [];
+  let b = [3, 1, 4];
+  let c = ["s", 0, 1, 2, true, false,
+    function () {
+    }, {}, []];
+
+  // 속성 (property)
+  // length : item의 수(배열의 길이)
+  console.log(a.length); // 0
+  console.log(b.length); // 3
+  console.log(c.length); // 9
+
+  // index를 사용해서 각 아이템에 접근
+  console.log(b[0]); // 3
+  console.log(b[1]); // 1
+  console.log(b[2]); // 4
+
+  b[2] = 5;
+  console.log(b); // [3, 1, 5]
+
+  console.log(b[3]); // undefined
+  console.log(b[b.length - 1]); // 마지막 인덱스 5
+  b[3] = 9;
+  console.log(b[3]); // 9
+  console.log(b.length); // 4
+
+  b[6] = 99;
+  console.log(b.length); // 7
+  console.log(b)
+
+  // 메소드 (method)
+  // push : 마지막에 아이템 추가
+  let d = [3, 1, 4];
+  console.log(d);
+  d.push(9);
+  console.log(d)
+
+  // pop : 마지막 아이템 삭제(꺼내기)
+  d.pop();
+  console.log(d);
+  let i1 = d.pop();
+  console.log(i1);
+  console.log(d);
+
+  // 연습
+  let e = ["h"];
+
+  // 코드작성
+  e.push("e");
+  e.push("l");
+  e.push("l");
+  e.push("o");
+  console.log(e); // ["h", "e", "l", "l", "o"];
+
+  // 코드작성
+  e.pop();
+  e.pop();
+  e.pop();
+  console.log(e); // ["h", "e"]
+
+  // shift : 앞의 아이템 삭제(꺼내기)
+  let f = [10, 20, 30, 40, 50];
+  f.shift();
+  console.log(f);
+  let i2 = f.shift();
+  console.log(i2); // 20
+  console.log(f); // [30, 40, 50]
+
+  // unshift : 앞에 아이템 추가
+  f.unshift(22);
+  console.log(f); // [22, 30, 40, 50]
+  f.unshift(11, 0, 1, 2, 3);
+  console.log(f);
+
+  // 연습
+  let g = [];
+
+  // unshift 사용
+  f.unshift("w");
+  f.unshift("o");
+  f.unshift("r");
+  f.unshift("l");
+  f.unshift("d");
+  console.log(g); // ["w", "o", "r", "l", "d"];
+
+  // shift 사용
+  f.shift();
+  f.shift();
+  f.shift();
+  console.log(g);
+</script>
+</body>
+</html>

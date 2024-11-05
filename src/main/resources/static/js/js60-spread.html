@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function fun1(a, b, c) {
+    console.log(a, b, c);
+  }
+
+  fun1(3, 4, 5);
+  fun1(5, 6);
+  fun1(10, 20, 30, 40);
+
+  const a = [3, 1, 4];
+  fun1(a);
+  fun1(a[0], a[1], a[2]);
+  fun1(...a);
+
+  const b = ["han", "rose", "bruno", "son"];
+  fun1(...b);
+  fun1("han", "rose", "bruno", "son");
+
+  const c = ["faker"];
+  fun1(...c);
+  fun1("faker");
+</script>
+</body>
+</html>

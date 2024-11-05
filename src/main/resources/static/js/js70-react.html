@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/jsx">
+  let arr = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, quasi.",
+    "Assumenda beatae ducimus enim est itaque minus nam necessitatibus totam.",
+    "Blanditiis consequatur ducimus harum, ipsum molestiae nisi totam ut veritatis.",
+    "Consequuntur dolore eveniet expedita natus quibusdam recusandae sunt. Dolore, laborum.",
+    "Alias, eaque ex hic minima perspiciatis rem sapiente totam voluptas.",
+    "Asperiores itaque mollitia nesciunt? Facere obcaecati, porro. Exercitationem, id, illo?",
+    "Aperiam autem cupiditate esse exercitationem ipsam placeat, possimus ullam ut?",
+    "Delectus fugiat praesentium quis rerum! Cumque eligendi molestias nostrum! Laudantium!",
+    "Animi asperiores consectetur corporis harum in ipsum laborum quibusdam similique?",
+    "Aliquam commodi dolores doloribus esse ipsam iste nesciunt veritatis voluptate."]
+
+  function App() {
+    const [texts, setTexts] = React.useState(arr);
+
+    function handleKeyUp(e) {
+      const keyword = e.target.value;
+      setTexts(arr.filter(item => item.toLowerCase()
+        .includes(keyword.toLowerCase())));
+    }
+
+    return <div>
+      <input type="text" onKeyUp={handleKeyUp}/>
+      <ul>
+        {texts.map((text) => <li>{text}</li>)}
+      </ul>
+    </div>
+  }
+
+  ReactDOM.createRoot(document.querySelector("#root"))
+    .render(<App/>)
+
+</script>
+</body>
+</html>

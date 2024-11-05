@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // spread (...)
+  const a = [3, 1, 4];
+  const b = [...a];
+
+  const c = {name: "son", city: "london"};
+  const d = {...c}; // 얕은 복사
+
+  d.name = "lee";
+
+  console.log(c);
+  console.log(d);
+
+  // 연습 : 객체 복사 e를 f에 복사
+  const e = {address: "seoul", age: 55, married: true};
+  const f = {...e};
+  f.age = 44;
+
+  console.log(e);
+  console.log(f);
+
+  // spread 연산자 활용
+  const g = {name: "rose", song: "apt"};
+  const h = {address: "seoul", age: 22};
+
+  const i = {...g, ...h};
+  console.log(i);
+
+  const j = {...h, ...g};
+  console.log(j);
+
+  const k = {...g, group: "blackpink"};
+  console.log(k);
+
+  const l = {...g, name: "bruno"};
+  console.log(l);
+
+  const m = {name: "bruno", ...g};
+  console.log(m);
+
+  const n = {name: "son", city: "london"}
+  const o = {name: "lee", team: "paris"}
+  const p = {...n, ...o};
+  const q = {...o, ...n};
+  console.log(p);
+  console.log(q);
+
+  // 연습
+  const r = {team: "t1", address: "seoul"};
+  const s = {name: "faker", age: 33};
+
+  // 코드 작성
+  const t = {...r, ...s, age: 44, married: false};
+  // {team: "t1", address: "seoul", name: "faker", age: 44, married: false}
+  console.log(t);
+
+</script>
+</body>
+</html>

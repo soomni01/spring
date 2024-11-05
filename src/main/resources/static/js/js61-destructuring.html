@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Destructuring assignment (구조분해 할당)
+  const a = [3, 1, 4];
+  const n1 = a[0];
+  const n2 = a[1];
+  const n3 = a[2];
+  console.log(n1, n2, n3);
+
+  const [x, y, z] = a;
+  console.log(x, y, z);
+
+  const [s, t] = a;
+  console.log(s, t);
+
+  const [o, p, q, r] = a;
+  console.log(o, p, q, r); // r은 undefined
+
+  // const [s] = a;
+  // console.log(s);
+
+  const b = ["faker", "apt"];
+  const [s1, s2] = b;
+  console.log(s1, s2); // faker, apt
+</script>
+</body>
+</html>

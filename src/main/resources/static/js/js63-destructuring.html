@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Destructuring assignment (구조분해 할당)
+  function fun1() {
+    return ["faker", "son", "han"];
+  }
+
+  const a = fun1();
+  console.log(a);
+  const [x, y, z] = a;
+  console.log(x, y, z);
+
+  const [s1, s2, s3] = fun1();
+  console.log(s1, s2, s3);
+
+  function fun2() {
+    const a = "rose";
+    const b = () => {
+      console.log("apt apt");
+    }
+    const c = "blackpink";
+
+    return [a, b, c];
+  }
+
+  const [n1, n2, n3] = fun2();
+  console.log(n1, n3); // rose, blackpink
+  n2(); // 콘솔에 apt apt
+</script>
+</body>
+</html>

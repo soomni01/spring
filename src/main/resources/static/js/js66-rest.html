@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // rest (...)
+  const a = [3, 1, 4];
+  const b = [...a]; // spread
+
+  const [x, y, z] = a; // destructuring assign
+
+  const [n1, ...n2] = a; // rest property
+  console.log(n1);
+  console.log(n2)
+
+  const [...c] = a; // 얕은 복사
+  console.log(c);
+
+  // 끝에만 존재
+  // const [...s1, s2] = a;
+
+  // 연습
+  const d = ["donald", "harris", "rose", "son"];
+  const [x1, x2, ...s] = d;
+
+  console.log(x1); // donald
+  console.log(x2); // harris
+  console.log(s); // [rose, son]
+
+  // object
+  const e = {name: "donald", city: "ny", country: "us", height: 200};
+  const {name, city, country, height} = e;
+  console.log(name, city, country, height);
+
+  const f = {nick: "harris", address: "chicago", country: "us", weight: 200};
+  const {nick, address, ...g} = f;
+  console.log(nick);
+  console.log(address);
+  console.log(g);
+  console.log(g.country);
+  console.log(g.weight);
+
+  //연습
+  const h = {
+    team: "t1",
+    married: true,
+    title: "소년이",
+    content: "518"
+  }
+  // 코드 작성
+  const {team, ...i} = h;
+  console.log(team); // t1
+  console.log(i.married); // true
+  console.log(i.title); // 소년이
+  console.log(i.content); // 518
+
+</script>
+</body>
+</html>

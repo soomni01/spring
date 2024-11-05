@@ -16,7 +16,7 @@
   console.log(a); // 3, 1, 4
   console.log(b); // 33, 1, 4
 
-  // 얕은 복사
+  // 얕은 복사 : 주소값 복사
   let c = [{name: "son"}, {name: "lee"}, {name: "rose"}];
   let d = c.filter(() => true); // 참조값이 복사된 것
 
@@ -27,12 +27,12 @@
   console.log(c); // c[o].name= "han"
   console.log(d);
 
-  // 깊은 복사
+  // 깊은 복사 : 값 자체 복사
   const f = c.map(e => {
     return {...e}; // spread 연산자
   });
   f[0].name = "apt";
-  
+
   console.log(c);
   console.log(f);
 </script>

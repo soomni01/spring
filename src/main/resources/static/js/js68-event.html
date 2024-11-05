@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--button#btn$*5-->
+<button id="btn1">button1</button>
+<button id="btn2">button2</button>
+<button id="btn3" onclick="console.log(`세번째 버튼 클릭됨`)">button3</button>
+<button id="btn4">button4</button>
+<button id="btn5">button5</button>
+
+<hr>
+<!--div*5>input#input$-->
+<div>
+    <input type="text" id="input1">
+</div>
+<div>
+    <input type="text" id="input2">
+</div>
+<div>
+    <input type="text" id="input3"
+           onkeyup="console.log(document.querySelector(`#input3`).value)">
+</div>
+<div>
+    <input type="text" id="input4">
+</div>
+<div>
+    <input type="text" id="input5">
+</div>
+<div>
+    <input type="text" id="input6">
+</div>
+<div>
+    <input type="text" id="input7">
+</div>
+<hr>
+<!--p*5>lorem3-->
+<p>Lorem ipsum dolor.</p>
+<p>Adipisci, asperiores, sapiente!</p>
+<p>Aperiam, sequi veniam!</p>
+<p>Aspernatur, quisquam ut.</p>
+<p>Ea, iste suscipit.</p>
+
+<script>
+  // event listener 정의
+  // addEventListener
+  document.querySelector("#btn1")
+    .addEventListener("click", () => {
+      console.log("첫번째 버튼 클릭됨");
+    })
+  // onclick (property)
+  document.querySelector("#btn2").onclick = () => {
+    console.log("두번째 버튼 클릭됨");
+  }
+
+  // onclick (attribute)
+
+
+  // 연습
+  // input1 에 keyup 이벤트 발생시 input에 입력된 값을 console에 출력
+  // addEventListener
+  document.querySelector("#input1")
+    .addEventListener("keyup", () => {
+      console.log(document.querySelector("#input1").value);
+    })
+
+  // input2 에 keyup 이벤트 발생시 input에 입력된 값을 console에 출력
+  // onkeyup property
+  document.querySelector("#input2").onkeyup = () => {
+    console.log(document.querySelector("#input2").value);
+  }
+
+  // input3 에 keyup 이벤트 발생시 input에 입력된 값을 console에 출력
+  // onkeyup attribute
+
+  // input4, input5
+  const inputList = document.querySelectorAll("#input4, #input5");
+  for (const elem of inputList) {
+    elem.addEventListener("keyup", () => {
+      console.log(elem.value);
+    });
+  }
+
+  // input6, input7
+  function fun1(e) {
+    // console.log(param); // event 객체
+    // console.log("value");
+    console.log(e.target.value);
+  }
+
+  document.querySelector("#input6")
+    .addEventListener("keyup", fun1);
+  document.querySelector("#input7")
+    .addEventListener("keyup", fun1);
+
+  // 연습 코드 작성
+  function fun2(e) {
+    console.log(e.target.innerHTML);
+  }
+
+  // document.querySelectorAll("p")
+  //   .forEach(elem => elem.onclick = fun2);
+  document.querySelectorAll("p")
+    .forEach(elem => elem.addEventListener("click", fun2));
+</script>
+</body>
+</html>

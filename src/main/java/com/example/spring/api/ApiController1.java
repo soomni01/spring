@@ -9,9 +9,14 @@ import java.util.Map;
 
 @RequestMapping("/api/main1")
 @Controller
-public class ApiController {
+public class ApiController1 {
+    @PostMapping("sub4")
+    public void sub4(@RequestBody Map<String, Object> map) {
+        System.out.println(map);
+    }
+
     @PostMapping("sub3")
-    public void sub3(@RequestBody Map<String, String> map) {
+    public void sub3(@RequestBody Map<String, Object> map) {
         System.out.println(map);
     }
 

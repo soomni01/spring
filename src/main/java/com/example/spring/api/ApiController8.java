@@ -58,30 +58,19 @@ public class ApiController8 {
         System.out.println("attached = " + attached.getOriginalFilename());
 
         attached.transferTo(new File("C:/Temp/" + attached.getOriginalFilename()));
-//        try {
-//            InputStream is = attached.getInputStream();
-//            BufferedInputStream bis = new BufferedInputStream(is);
-//
-//            String outputFilePath = "C:/Temp/" + attached.getOriginalFilename();
-//            FileOutputStream fos = new FileOutputStream(outputFilePath);
-//            BufferedOutputStream bos = new BufferedOutputStream(fos);
-//
-//            try (bis; bos; fos; is) {
-//                byte[] buffer = new byte[1024];
-//                int length;
-//                while ((length = bis.read(buffer)) != -1) {
-//                    bos.write(buffer, 0, length);
-//                }
-//                bos.flush();
-//            }
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @PostMapping("sub3")
     public void method3(@RequestParam String title,
                         @RequestParam(name = "files[]") MultipartFile[] attached) throws IOException {
+        for (MultipartFile file : attached) {
+            file.transferTo(new File("C:/Temp/" + file.getOriginalFilename()));
+        }
+    }
+
+    @PostMapping("sub4")
+    public void method4(@RequestParam String name,
+                        @RequestParam(name = "attached[]") MultipartFile[] attached) throws IOException {
         for (MultipartFile file : attached) {
             file.transferTo(new File("C:/Temp/" + file.getOriginalFilename()));
         }

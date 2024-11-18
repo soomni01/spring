@@ -19,7 +19,7 @@ public class ApiController9 {
 
     @GetMapping("sub1")
     public String sub1() {
-
+        System.out.println("ApiController9.sub1");
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuer("self") // 누가
                 .subject("son") // for 누구
